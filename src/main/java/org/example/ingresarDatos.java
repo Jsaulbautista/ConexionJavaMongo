@@ -26,7 +26,7 @@ public class ingresarDatos {
                 MongoDatabase database = mongoClient.getDatabase("ConexionJava");
                 MongoCollection<Document> collection = database.getCollection("usuarios");
 
-                Document document = new Document("name", nombreField.getText())
+                Document document = new Document("nombre", nombreField.getText())
                         .append("apellido", apellidoField.getText());
 
                 collection.insertOne(document);
