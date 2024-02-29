@@ -8,7 +8,7 @@ public class Main {
         frame.setContentPane(new ingresarDatos().ingresarDatosPanel);
         frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         frame.pack();
-        frame.setSize(800,300);
+        frame.setSize(800,500);
         frame.setVisible(true);
 
     }
