@@ -11,11 +11,13 @@ import java.awt.event.ActionListener;
 
 public class ingresarDatos {
     private JTextField nombreField;
-    private JTextField apellidoField;
+    private JTextField hobbyField;
     private JButton ingresarDatos;
     public JPanel ingresarDatosPanel;
     private JTextArea textArea1;
     private JButton buscarButton;
+    private JLabel descripcionlabel;
+    private JTextField descripcionField;
 
     private int contador = 1;
 
@@ -32,8 +34,9 @@ public class ingresarDatos {
                 MongoDatabase database = mongoClient.getDatabase("ConexionJava");
                 MongoCollection<Document> collection = database.getCollection("usuarios");
 
-                Document document = new Document("nombre", nombreField.getText())
-                        .append("apellido", apellidoField.getText());
+                Document document = new Document("Nombre", nombreField.getText())
+                        .append("Hobby", hobbyField.getText())
+                        .append("Descripción", descripcionField.getText());
 
                 collection.insertOne(document);
                 System.out.println("Documento insertado");
@@ -109,7 +112,7 @@ public class ingresarDatos {
 
             // Establecer la información encontrada en los campos respectivos
             nombreField.setText(document.getString("nombre"));
-            apellidoField.setText(document.getString("apellido"));
+            hobbyField.setText(document.getString("apellido"));
         } else {
             mostrarMensaje("No se encontró información para el nombre: " + nombre);
         }
