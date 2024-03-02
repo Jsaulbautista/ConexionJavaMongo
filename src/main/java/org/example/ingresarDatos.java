@@ -98,8 +98,9 @@ public class ingresarDatos {
         }
     }
     private void buscarPorNombre(String nombre) {
-        MongoClient mongoClient = MongoClients.create("mongodb+srv://saul:12345654321@saul.ey7q2vo.mongodb.net/?retryWrites=true&w=majority&appName=Saul");
-
+        //MongoClient mongoClient = MongoClients.create("mongodb+srv://saul:12345654321@saul.ey7q2vo.mongodb.net/?retryWrites=true&w=majority&appName=Saul");
+        MongoClient mongoClient = MongoClients.create("mongodb+srv://<esfot>:<esfot2024>@cluster0.xzffuex.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0");
+        //
         MongoDatabase database = mongoClient.getDatabase("ConexionJava");
         MongoCollection<Document> collection = database.getCollection("usuarios");
 
